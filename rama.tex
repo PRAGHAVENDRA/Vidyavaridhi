@@ -1,7 +1,7 @@
 \usepackage{fontspec,graphicx}
 \usepackage{setspace}
 \usepackage{polyglossia}
-\usepackage{hyperref}
+%\usepackage{hyperref}
 
 \setmainfont{Sanskrit2003}
 \setdefaultlanguage{sanskrit}
@@ -38,8 +38,6 @@ leftmargin=20mm,rightmargin=15.5mm,footskip=1.0cm]{zwpagelayout}
     \vskip 40\p@
   }}
 \makeatother
-  
-\pagestyle{fancy}
 
 \fancypagestyle{plain}{%
 \chead[]{}
@@ -48,13 +46,20 @@ leftmargin=20mm,rightmargin=15.5mm,footskip=1.0cm]{zwpagelayout}
 \cfoot[{\thepage}]{{\thepage}}
 }
 
-\lhead[]{}
+\lhead[\thepage]{\leftmark}
+\rhead[\leftmark]{\thepage}
 \chead[]{}
-\rhead[]{}
+
 
 \lfoot[]{}
 \rfoot[]{}
 \cfoot[]{}
+  
+\pagestyle{fancy}
+
+\renewcommand\chaptermark[1]{\markboth{\thechapter. #1}{}}
+\renewcommand\sectionmark[1]{}
+
 
 \pretolerance=9990
 
