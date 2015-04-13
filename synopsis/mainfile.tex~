@@ -4,16 +4,8 @@
 
 \begin{document}
 
-\frontmatter
-
-\input preface
-
 \tableofcontents
 
-\mainmatter
-
-\input rama_01
-
-\input rama_02
+\input s
 
 \end{document}

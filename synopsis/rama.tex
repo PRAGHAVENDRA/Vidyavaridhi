@@ -1,0 +1,97 @@
+\usepackage{fontspec,graphicx}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+\usepackage{indentfirst}
+\parindent 1.5cm
+\usepackage{setspace}
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
+\hyphenchar\font=-1
+\sloppy
+\usepackage{polyglossia}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,      
+    urlcolor=cyan,
+    pdftitle={mainfile},
+    pdfpagemode=FullScreen,
+}
+
+\usepackage{titlesec}
+%\usepackage{thispagestyle}
+
+\titleformat{\section}
+  {\normalfont\fontsize{12}{15}\bfseries}{\thesection}{1em}{}
+\usepackage{metalogo}
+\usepackage{perpage}
+\MakePerPage{footnote}
+ 
+
+
+
+
+
+%\setmainfont{Sanskrit2003}
+\setmainfont[Scale=1.8]{Sanskrit2003}
+\setdefaultlanguage{sanskrit}
+\newfontfamily\AA[Script=Devanagari]{Sanskrit2003}
+
+\usepackage{blindtext}
+\usepackage{multicol}
+\setlength{\columnsep}{2cm}
+\usepackage{fancyhdr}
+\usepackage{xltxtra}
+\usepackage{lipsum}
+\usepackage{titlesec}
+\titlespacing*{\section}{0pt}{0.5\baselineskip}{0.5\baselineskip}
+
+\renewcommand*\contentsname {विषयानुक्रमणिका}
+
+\usepackage[papersize={210 mm,297mm},textwidth=100mm,
+textheight=200mm,headheight=14.5mm,headsep=12.7mm,topmargin=1.5cm,botmargin=3cm,
+leftmargin=4cm,rightmargin=2.5cm,footskip=1.0cm]{zwpagelayout}
+
+
+\linespread{2.6}
+\renewcommand{\headrulewidth}{0.1pt}
+\makeatletter
+\def\@makechapterhead#1{%
+  %\vspace*{10\p@}%
+  {\parindent \z@ \raggedright \normalfont
+    \ifnum \c@secnumdepth >\m@ne
+      \if@mainmatter
+        \Large \bfseries \center \space 
+        \par\nobreak
+        \vskip 6\p@
+      \fi
+    \fi
+    \interlinepenalty\@M
+    \Large \bfseries #1\par\nobreak
+    \vskip 1\p@
+  }}
+\makeatother
+
+\fancypagestyle{}{%
+\chead[]{}
+\lhead[]{}
+\rhead[]{}
+\cfoot[]{}
+}
+
+ 
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,LO]{\leftmark}
+\fancyhead[LE,RO]{}
+\fancyfoot[CE,CO]{\bfseries \thepage}
+
+\renewcommand\chaptermark[1]{\markboth{\thechapter. #1}{}}
+\renewcommand\sectionmark[1]{}
+\renewcommand\subsectionmark[1]{}
+\renewcommand\subsubsectionmark[1]{}
+
+
+\pretolerance=9990

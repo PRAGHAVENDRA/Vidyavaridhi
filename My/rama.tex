@@ -1,0 +1,116 @@
+\usepackage{fontspec,graphicx}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+\usepackage{indentfirst}
+\parindent 1.5cm
+\usepackage{setspace}
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
+\hyphenchar\font=-1
+\sloppy
+\usepackage{polyglossia}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,      
+    urlcolor=cyan,
+    pdftitle={mainfile},
+    pdfpagemode=FullScreen,
+}
+
+\usepackage{titlesec}
+%\usepackage{thispagestyle}
+
+
+\usepackage{metalogo}
+\usepackage{perpage}
+\MakePerPage{footnote}
+ 
+
+
+
+
+
+%\setmainfont{Sanskrit2003}
+\setmainfont[Scale=1.8]{Sanskrit2003}
+\setdefaultlanguage{sanskrit}
+\newfontfamily\AA[Script=Devanagari]{Sanskrit2003}
+\newfontfamily\san[Script=Devanagari, Scale=1.7]{Lohit Hindi}
+
+\usepackage{blindtext}
+\usepackage{multicol}
+\setlength{\columnsep}{2cm}
+\usepackage{fancyhdr}
+\usepackage{xltxtra}
+\usepackage{lipsum}
+\usepackage{titlesec}
+\titleformat {\chapter}[display]{\bfseries\Large} % format
+{\thechapter} % label
+{-3ex} % sep
+{ \rule{\textwidth}{1pt}\vspace{-5ex}
+\centering
+} % before-code
+[
+\vspace{-7ex}%
+\rule{\textwidth}{1pt}
+]
+\titlespacing*{\chapter} {10pt}{-60pt}{50pt}
+
+\renewcommand*\contentsname {विषयानुक्रमणिका}
+
+\usepackage[papersize={210 mm,297mm},textwidth=100mm,
+textheight=200mm,headheight=14.5mm,headsep=12.7mm,topmargin=1.5cm,botmargin=3cm,
+leftmargin=4cm,rightmargin=2.5cm,footskip=1.0cm]{zwpagelayout}
+
+
+\linespread{2.6}
+\renewcommand{\headrulewidth}{0.1pt}
+\makeatletter
+\def\thickhrule{\leavevmode \leaders \hrule height 1ex \hfill \kern \z@}
+\def\position{\center}
+%% Note the difference between the commands the one is 
+%% make and the other one is makes
+\renewcommand{\@makechapterhead}[1]{%
+  \vspace*{-60\p@}%
+  {\parindent \z@ \position \reset@font
+        {\Large \scshape  \thechapter }
+        \par\nobreak
+        \vspace*{-50\p@}%
+        \interlinepenalty\@M
+        \rule{\textwidth}{2pt}
+        \par\nobreak
+        \vspace*{-15\p@}%
+        {\Large \bfseries #1\par\nobreak}
+        \par\nobreak
+        \vspace*{-15\p@}%
+		\rule{\textwidth}{2pt}
+    \vskip 1\p@
+    \vskip 2\p@
+  }}
+
+\makeatother
+
+\fancypagestyle{}{%
+\chead[]{}
+\lhead[]{}
+\rhead[]{}
+\cfoot[]{}
+}
+
+ 
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,LO]{\rightmark}
+\fancyhead[RE,RO]{\leftmark}
+\fancyhead[CE,CO]{}
+\fancyfoot[CE,CO]{\thepage}
+
+\renewcommand\chaptermark[1]{\markboth{ #1}{}}
+\renewcommand{\sectionmark}[1]{\markright{#1}}
+
+
+
+\pretolerance=9990
+
