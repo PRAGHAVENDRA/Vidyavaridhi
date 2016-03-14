@@ -4,18 +4,12 @@
 \usepackage{indentfirst}
 \parindent 1.5cm
 \usepackage{setspace}
-\tolerance=1
-\emergencystretch=\maxdimen
-\hyphenpenalty=10000
-\hbadness=10000
-\hyphenchar\font=-1
-\sloppy
+
 \usepackage{polyglossia}
 \usepackage[utf8]{inputenc}
 \usepackage{imakeidx}
 \usepackage{cleveref}
 \makeindex[columns=2, title=श्लोकानुक्रमणिका, intoc]
-
 
 
 \usepackage{hyperref}
@@ -25,9 +19,7 @@
     urlcolor=cyan,
     pdftitle={mainfile},
 }
-
-
-
+\usepackage{tabu}
 
 \usepackage{titlesec}
 \titleformat{\section}
@@ -49,13 +41,14 @@
 
 
 
-
+%\fontsize{13}{15}\selectfont
 %\setmainfont{Sanskrit2003}
-\setmainfont[Scale=1.9]{Sanskrit2003}
+\setmainfont[WordSpace=1.4, Scale=1.8]{Lohit Devanagari}
 \setdefaultlanguage{sanskrit}
-\newfontfamily\AA[Script=Devanagari]{Sanskrit2003}
+\newfontfamily\AA[Script=Devanagari]{Lohit Devanagari}
 
-\newfontfamily\s[Script=Devanagari, Scale=1.5]{Lohit Devanagari}
+\newfontfamily\s[WordSpace=2.1, Scale=2.0, Script=Devanagari]{Sanskrit2003}
+
 
 
 \usepackage{pdfpages}
@@ -65,14 +58,14 @@
 \newcommand{\devanagarinumeral}[1]{%
   \devanagaridigits{\number\csname c@#1\endcsname}}
 \renewcommand{\thesection}{\devanagarinumeral{section}}
-\renewcommand{\thesubsection}{\roman{subsection}}
+\renewcommand{\thesubsection}{\devanagarinumeral{subsection}}
 \renewcommand{\thepage}{\devanagarinumeral{page}}
 \renewcommand{\theenumi}{\devanagarinumeral{enumi}}
 \renewcommand{\thefootnote}{\devanagarinumeral{footnote}}
 
 \usepackage{blindtext}
 \usepackage{multicol}
-\setlength{\columnsep}{2cm}
+\setlength{\columnsep}{10cm}
 \usepackage{fancyhdr}
 \usepackage{xltxtra}
 \usepackage{lipsum}
@@ -82,28 +75,13 @@
 \renewcommand*\contentsname {विषयानुक्रमणिका}
 
 \usepackage[papersize={210 mm,297mm},textwidth=100mm,
-textheight=200mm,headheight=14.5mm,headsep=12.7mm,topmargin=2.7cm,botmargin=3cm,
-leftmargin=4.5cm,rightmargin=2.5cm,footskip=1.0cm]{zwpagelayout}
+textheight=200mm,headheight=14.5mm,headsep=12.7mm,topmargin=1.8cm,botmargin=2.1cm,
+leftmargin=3.5cm,rightmargin=2.5cm,footskip=1.0cm]{zwpagelayout}
 
 
 \linespread{2.8}
-\renewcommand{\headrulewidth}{0.5pt}
-\makeatletter
-\def\@makechapterhead#1{%
-  %\vspace*{-10\p@}%
-  {\parindent \z@ \raggedright \normalfont
-    \ifnum \c@secnumdepth >\m@ne
-      \if@mainmatter
-        \large \bfseries \center \space 
-        \par\nobreak
-        %\vskip -6\p@
-      \fi
-    \fi
-    \interlinepenalty\@M
-    \large \bfseries #1\par\nobreak
-    %\vskip 1\p@
-  }}
-\makeatother
+
+
 
 \fancypagestyle{}{%
 \chead[]{}
@@ -115,13 +93,14 @@ leftmargin=4.5cm,rightmargin=2.5cm,footskip=1.0cm]{zwpagelayout}
  
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[LE,RO]{\footnotesize \leftmark}
-\fancyhead[RE,LO]{\scriptsize प्राच्यन्याय-वैशेषिक-नव्यन्यायशास्त्रेषु\\तत्तद्व्याख्याकाराणां सैद्धान्तिकमतभेदानां\\सङ्कलनपूर्वकं विमर्शात्मकमध्ययनम्}
+\fancyhead[LE,RO]{\leftmark}
+\fancyhead[RE,LO]{\rightmark}
 \fancyfoot[CE,CO]{\bfseries \small \thepage}
 
 \renewcommand{\chaptermark}[1]{\markboth{#1}{}}
-\renewcommand\sectionmark[1]{}
+\renewcommand{\sectionmark}[2]{\markboth{#1}{}}
 \renewcommand\subsectionmark[1]{}
 \renewcommand\subsubsectionmark[1]{}
+
 
 \pretolerance=9990
